@@ -1,0 +1,8 @@
+CREATE TABLE purchases (
+    purchase_id SERIAL PRIMARY KEY,      -- Unique identifier for each purchase
+    customer_id INT NOT NULL,            -- Foreign key referencing the customers table
+    purchase_date TIMESTAMP NOT NULL,    -- Date and time of the purchase
+    amount DECIMAL(10, 2) NOT NULL,      -- Total amount of the purchase
+    description VARCHAR(255),             -- Optional description of the purchase
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)  -- Ensures referential integrity
+);

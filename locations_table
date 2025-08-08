@@ -1,0 +1,8 @@
+CREATE TABLE locations (
+    location_id SERIAL PRIMARY KEY,  -- Unique identifier for each location
+    state VARCHAR(100) NOT NULL,     -- State or region of the location
+    country VARCHAR(100) NOT NULL,   -- Country of the location
+    zip_code VARCHAR(20) NOT NULL,   -- Zip or postal code
+    customer_id INT,                  -- Foreign key referencing the customers table
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)  -- Ensures referential integrity
+);

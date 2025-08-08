@@ -1,0 +1,8 @@
+CREATE TABLE customers (
+    customer_id SERIAL PRIMARY KEY,  -- Unique identifier for each customer
+    name VARCHAR(100) NOT NULL,      -- Customer's full name
+    email VARCHAR(255) NOT NULL UNIQUE,  -- Customer's email address
+    location VARCHAR(255),            -- Customer's location (city, state, country)
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- Record creation time
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP  -- Last update time
+);
